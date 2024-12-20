@@ -124,16 +124,45 @@ int invertedAbcTri(int n){
 
 int Pyramid(int n){
     for(int i = 0; i<n; i++){
-        for(int j = 0; j<n-i-1; j++){
+        for(int j = 0; j<n-i-1; j++){ //Spaces
             cout << " ";
         }
-        for(int j = 1; j <= i+1; j++ ){
+        for(int j = 1; j <= i+1; j++ ){ // first Nums
             cout << j ;
         }
-        for(int j = i; j>0; j--){
+        for(int j = i; j>0; j--){ // Second Numbers
             cout << j ;
         }
         cout << endl;
+    }
+}
+
+int HollowDiamond(int n){
+    for(int i = 0; i<n; i++){
+        for(int j = 0;j <n-i-1; j++){ //OuterSpaces
+            cout << " ";
+        }
+        cout << "*";
+        if(i != 0){
+            for(int j = 0; j<2*i-1; j++){//InnerSpace
+                cout << " " ;
+            }
+            cout << "*";
+        }
+        cout << endl;
+    }
+    for(int i = 0; i<n-1; i++){
+        for(int j = 0; j<i+1; j++){
+            cout << " ";
+        }
+        cout << "*";
+        if(i != n-2){
+            for(int j = 0;j<2*(n-i)-5; j++ ){
+                cout << " ";
+            }
+            cout << "*";
+        }
+        cout<< endl;
     }
 }
 
@@ -150,6 +179,7 @@ int main()
     // floydTri(n);
     // invertedTri(n);
     // invertedAbcTri(n);
-    Pyramid(n);
+    // Pyramid(n);
+    HollowDiamond(n);
     return 0;
 }
