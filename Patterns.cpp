@@ -101,9 +101,23 @@ int invertedTri(int n){
         for(int k = 0; k<i; k++){
         cout << " " ;
         }
-        for(int j=n-i ;j>0;j--){
+        for(int j=0;j<n-i;j--){
             cout << i + 1 ;
         }
+        cout << endl;
+    }
+}
+
+int invertedAbcTri(int n){
+    char ch = 'A';
+    for(int i = 0; i<n; i++){
+        for(int k = 0; k<i; k++){ //Space
+            cout << " ";
+        }
+        for(int j = 0; j < n-i; j++){ //Alphabets
+            cout << ch;
+        }
+        ch = ch + 1;
         cout << endl;
     }
 }
@@ -119,6 +133,7 @@ int main()
     // verLa(n);
     // revNum(n);
     // floydTri(n);
-    invertedTri(n);
+    // invertedTri(n);
+    invertedAbcTri(n);
     return 0;
 }
