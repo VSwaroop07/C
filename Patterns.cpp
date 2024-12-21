@@ -166,9 +166,44 @@ int HollowDiamond(int n){
     }
 }
 
+int Butterfly(int n){
+    for(int i = 0; i< n; i++){ //First Loop Top
+        for(int j = 0; j<i+1;j++){ //Star First
+        cout << "*";
+        }
+        for(int j = 0; j<n-i-1; j++){ //Sapces First
+        cout << " ";
+        }
+        for(int j = 0; j<n-i-1; j++){ //Sapces Second
+        cout << " ";
+        }
+        for(int j = 0; j<i+1;j++){ //Star Second
+        cout << "*";
+        }
+        cout << endl;
+    }
+    for(int i = 0; i<n; i++){ //Second Loop Bottom
+        for(int j = 0; j<n-i-1;j++){ //First Stars
+            cout << "*";
+        }
+        for(int j = 0; j<i+1; j++){ //First Spaces
+            cout << " ";
+        }
+        for(int j = 0; j<i+1; j++){ //Second Spaces
+            cout << " ";
+        }
+
+        for(int j = 0; j<n-i-1; j++){ //Second Stars
+            cout << "*";
+        }
+        cout << endl;
+    }
+
+}
+
 int main()
 {
-    int n = 4;
+    int n = 8;
     // Numeric(n);
     // charastrictic(n);
     // ladder(n);
@@ -180,6 +215,7 @@ int main()
     // invertedTri(n);
     // invertedAbcTri(n);
     // Pyramid(n);
-    HollowDiamond(n);
+    // HollowDiamond(n);
+    Butterfly(n);
     return 0;
 }
