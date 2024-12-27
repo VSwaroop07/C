@@ -2,11 +2,20 @@
 using namespace std;
 
 int printFibonacci(int n){
-    if (n == 0){
-
+    int a = 0;
+    int b = 1;
+    int next;
+    for(int i=0; i<n; i++){
+        if (i == 0){
+        cout << a << " ";
+    }else if (i == 1){
+        cout << b << " ";
+    }else if(i>=2){
+        next = a + b;
+        cout << next << " ";
+        a = b;
+        b = next;
     }
-    if ( n== 1){
-
     }
 }
 
