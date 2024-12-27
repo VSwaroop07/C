@@ -12,12 +12,25 @@ int decToBinary(int decNum){
     return ans;
 }
 
+int binaryToDecimal(int binaryNum){
+    int ans = 0, power = 1, rem;
+    while(binaryNum > 0){
+        rem = binaryNum % 10;
+        binaryNum /= 10 ;
+        ans += rem*power;
+        power = power * 2;
+    }
+    return ans;
+}
+
 int main (){
     // int decNum = 6;
     // int res = decToBinary(decNum);
     // cout << res ;
-    for(int i = 0; i<=10; i++){
-        cout << decToBinary(i) << endl;
-    }
+    // for(int i = 0; i<=10; i++){
+    //     cout << decToBinary(i) << endl;
+    // }
+    int binaryNum = 101;
+    cout << binaryToDecimal(binaryNum);
     return 0;
 }
