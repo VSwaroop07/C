@@ -16,11 +16,11 @@ int isPrime(int n){
 
 int main(){
     int n = 100;
-    // prime(4);
     for(int i = 1; i<=n; i++){
         if(isPrime(i)){
             cout << i << endl;
         }
     }
+    // prime(4);
     return 0;
 }
