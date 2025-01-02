@@ -16,9 +16,9 @@ int sum(int arr[], int size)
     return sum;
 }
 
-int product(int arr[], int size)
+long long product(int arr[], int size)
 {
-    int product = 0;
+    long long product = 1;
     for (int i = 0; i < size; i++)
     {
         product *= arr[i];
@@ -28,7 +28,7 @@ int product(int arr[], int size)
 
 
 //Question Two : Swap the max and min number from array.
-int swap(int arr[], int size)
+void swapArray(int arr[], int size)
 {
     int min = INT_MAX;
     int max = INT_MIN;
@@ -49,7 +49,6 @@ int swap(int arr[], int size)
     }
     swap(arr[minIndex], arr[maxIndex]);
 
-    return 0;
 }
 
 // Question Three : Find the unique Value in Array.
@@ -64,3 +63,23 @@ int unique(int arr[], int size){
     }
 }
 
+int main(){
+    int size = 10;
+    int arr[size] = {23,42,54,23,24,56,33,51,53,33};
+    cout << "Arrya Before any opration : ";
+    for(int i = 0; i<size; i++){
+        cout<< arr[i] << " ";
+    }
+    cout << endl;
+    int Asum = sum(arr, size);
+    long long Aproduct = product(arr, size);
+    cout << "Sum of all Elements : " << Asum << endl;
+    cout << "Product of all Elements : " << Aproduct << endl;
+
+    swapArray(arr, size);
+    cout << "After Swapping Array : ";
+    for(int i = 0; i<size; i++){
+        cout<< arr[i] << " ";
+    }
+    cout << endl;
+}
