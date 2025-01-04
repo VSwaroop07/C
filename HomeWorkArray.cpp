@@ -56,25 +56,51 @@ int unique(int arr[], int size)
     unordered_map<int, int> freqMap;
     for (int i = 0; i < size; i++)
     {
-        freqMap[arr[i]]++; //Increament The count for arr[i]
+        freqMap[arr[i]]++; // Increament The count for arr[i]
     }
     // Printing a HashMap
     // for(const auto& pair:freqMap){
     //     cout<< pair.first << " " << pair.second << endl;
     // }
-    //Printing Unique Values
+    // Printing Unique Values
     cout << "Unique Values in array : ";
-    for(const auto& pair:freqMap){
-        if(pair.second == 1){
+    for (const auto &pair : freqMap)
+    {
+        if (pair.second == 1)
+        {
             cout << pair.first << " ";
         }
     }
+    cout<< endl;
+    return 0;
 }
 
+// Question Four : Find the internsection (Same numer in two arrays)
+int intersection(int arr[],int arr1[], int size, int size1)
+{
+    unordered_map<int, int> num;
+    for (int i = 0; i < size; i++)
+    {
+        num[arr[i]]++; // Adding the values of array in Hashmap
+    }
+    cout << "Intersecting Elements in Array : ";
+    for (int i = 0; i < size1; i++)
+    {
+        for (const auto &pair : num)
+        {
+            if (pair.first == arr1[i])
+            {
+                cout << pair.first << " ";
+            }
+        }
+    }
+    return 0;
+}
 int main()
 {
     int size = 10;
     int arr[size] = {23, 42, 54, 23, 24, 56, 33, 51, 53, 33};
+    int arr1[size] = {23, 32, 43, 21, 33, 44, 12, 51, 24, 11};
     cout << "Arrya Before any opration : ";
     for (int i = 0; i < size; i++)
     {
@@ -95,4 +121,7 @@ int main()
     cout << endl;
 
     unique(arr, size);
+    intersection(arr, arr1, size, size);
+
+    return 0;
 }
