@@ -36,12 +36,30 @@ int SubarrayMaxSum(int arr[], int size)
     return maxSum;
 }
 
+int KadanesAlgo(int arr[], int size)
+{
+    int maxSum = INT_MIN;
+    int currentSum = 0;
+    for (int i = 0; i < size; i++)
+    {
+        currentSum += arr[i];
+        maxSum = max(currentSum, maxSum);
+        if (currentSum < 0)
+        {
+            currentSum = 0;
+        }
+    }
+    return maxSum;
+}
+
 int main()
 {
     int size = 5;
     int arr[size] = {1, 2, 3, 4, 5};
     subarrayPrint(arr, size);
     int max = SubarrayMaxSum(arr, size);
+    int maxK = KadanesAlgo(arr, size);
     cout << "The Maximum Subarray Sum Is : " << max << endl;
+    cout << "The Maximum Subarray Sum Is : " << maxK << endl;
     return 0;
 }
