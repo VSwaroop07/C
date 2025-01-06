@@ -44,7 +44,7 @@ int KadanesAlgo(int arr[], int size)
     {
         currentSum += arr[i];
         maxSum = max(currentSum, maxSum);
-        if (currentSum < 0)
+        if (currentSum < 0) // Reset of the Current sum is done at last so we can get -ve largerst at least.
         {
             currentSum = 0;
         }
