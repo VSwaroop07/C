@@ -57,11 +57,46 @@ int Moores(vector<int> vec){
     return ans;
 }
 
+//Moores Algo if no majority element present
+int MooresN(vector<int> vec){
+     int freq = 0, ans = 0;
+    int size = vec.size();
+    for(int i = 0; i<size; i++){
+        if(freq == 0){
+            ans = vec[0];
+        }else if(ans == vec[i]){
+            freq++;
+        }else{
+            freq--;
+        }
+    }
+
+    //This logic Checkes if the majority Element Stisfy The condition of > n/2.
+    int count = 0;
+    for(int val : vec){
+        if(val == ans){
+            count++;
+        }
+    }
+
+    if(count > size/2){
+        return ans;
+    }else{
+        return -1;
+    }
+}
+
 int main(){
     vector<int> nums = {1,2,1,2,1};
     int ans = Brute(nums);
     int ansO = Optimal(nums);
     int ansM = Moores(nums);
+    int ansMN = MooresN(nums);
+    if(ansMN == -1){
+        cout << "No Majority Element Present.";
+    }else{
+        cout << "Majority Element : "<< ansMN << endl;
+    }
     cout << "BruteForce answer : " << ans << endl;
     cout << "Optimal Answer : " << ansO << endl;
     cout << "Moore'sVoting Algorithm Answer : " << ansM << endl;
